@@ -27,11 +27,12 @@ export const useTaskStore = create<TaskItemProps>((set) => ({
           ? {
               ...task,
               isDone: !task.isDone,
-              doneAt: task.isDone ? null : new Date().toLocaleDateString(),
+              doneAt: !task.isDone ? new Date().toISOString() : null,
             }
           : task
       ),
     })),
+
   removeTask: (id) =>
     set((state) => ({
       tasks: state.tasks.filter((task) => task.id !== id),

@@ -82,12 +82,13 @@ export default function HomePage() {
                     </Text>
                   )}
                   {task.doneAt && (
-                    <Text size="xs" c="kittiphum">
+                    <Text size="xs" c="\chanadda">
+                      
                       Done at: {dayjs(task.doneAt).format("ddd MMM DD YYYY")}
                     </Text>
                   )}
                 </Stack>
-
+                
                 <Group>
                   <Checkbox
                     checked={task.isDone}
